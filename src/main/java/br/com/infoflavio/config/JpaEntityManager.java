@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class JpaEntityManager {
 
-	private EntityManagerFactory factory = Persistence.createEntityManagerFactory("app_crud");
+	private EntityManagerFactory factory = Persistence.createEntityManagerFactory("primary");
 	private EntityManager em = factory.createEntityManager();
 
 	public EntityManager getEntityManager() {

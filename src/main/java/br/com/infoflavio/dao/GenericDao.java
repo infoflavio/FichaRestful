@@ -9,6 +9,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -16,10 +17,10 @@ import org.hibernate.criterion.Restrictions;
 import br.com.infoflavio.config.EntityManagerUtil;
 import br.com.infoflavio.exception.RestFulBeanException;
 
-
+@Transactional
 public class GenericDao<T extends Serializable> {
 
-    @PersistenceContext(unitName = "app_crud")
+    @PersistenceContext(unitName = "primary")
     private EntityManager entityManager;
     private final Class<T> persistentClass;
     
@@ -110,7 +111,7 @@ public class GenericDao<T extends Serializable> {
     
     public void checkSession() {
         if (!getEntityManager().isOpen()) {
-            EntityManagerFactory factory = Persistence.createEntityManagerFactory("app_crud");
+            EntityManagerFactory factory = Persistence.createEntityManagerFactory("primary");
             entityManager = factory.createEntityManager();
         }
     }

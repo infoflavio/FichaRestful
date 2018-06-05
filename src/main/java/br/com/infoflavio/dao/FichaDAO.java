@@ -9,12 +9,14 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import javax.transaction.Transactional;
 
 import br.com.infoflavio.model.AnimalModel;
 import br.com.infoflavio.model.FichaModel;
 import br.com.infoflavio.vo.AnimalVO;
 import br.com.infoflavio.vo.FichaVO;
 
+@Transactional
 public class FichaDAO  extends GenericDao<FichaModel> {
 	
 	private static FichaDAO instance;

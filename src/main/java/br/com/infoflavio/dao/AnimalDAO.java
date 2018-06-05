@@ -7,10 +7,12 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import javax.transaction.Transactional;
 
 import br.com.infoflavio.model.AnimalModel;
 import br.com.infoflavio.vo.AnimalVO;
 
+@Transactional
 public class AnimalDAO  extends GenericDao<AnimalModel> {
 	
 	private static AnimalDAO instance;

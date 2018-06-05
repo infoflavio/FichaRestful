@@ -3,6 +3,7 @@ package br.com.infoflavio.service;
 import java.util.Date;
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -14,8 +15,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 
-import com.sun.jersey.api.core.InjectParam;
-
 import br.com.infoflavio.controller.FichaController;
 import br.com.infoflavio.exception.RestFulBeanException;
 import br.com.infoflavio.vo.FichaVO;
@@ -23,8 +22,8 @@ import br.com.infoflavio.vo.FichaVO;
 @Path("/ficha")
 public class FichaService {
 	
-	@InjectParam
-    private FichaController controller;
+	@EJB
+    protected FichaController controller;
 	
 	@GET
 	@Produces("application/json")

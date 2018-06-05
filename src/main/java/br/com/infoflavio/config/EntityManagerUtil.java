@@ -10,7 +10,7 @@ public class EntityManagerUtil {
 
 	public static EntityManager getEntityManager() {
 		if (emf == null){
-			emf = Persistence.createEntityManagerFactory("app_crud");
+			emf = Persistence.createEntityManagerFactory("primary");
 		}
 		return emf.createEntityManager();
 	}

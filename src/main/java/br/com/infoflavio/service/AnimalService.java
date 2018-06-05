@@ -11,8 +11,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import com.sun.jersey.api.core.InjectParam;
-
 import br.com.infoflavio.controller.AnimalController;
 import br.com.infoflavio.exception.RestFulBeanException;
 import br.com.infoflavio.vo.AnimalVO;
@@ -20,8 +18,7 @@ import br.com.infoflavio.vo.AnimalVO;
 @Path("/animal")
 public class AnimalService {
 	
-	@InjectParam
-    private AnimalController controller;
+    private AnimalController controller = new AnimalController();
 	
 		
 	@GET

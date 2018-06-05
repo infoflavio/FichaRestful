@@ -3,10 +3,12 @@ package br.com.infoflavio.controller;
 import java.util.Date;
 import java.util.List;
 
+import javax.ejb.Stateful;
+
 import br.com.infoflavio.dao.FichaDAO;
 import br.com.infoflavio.vo.FichaVO;
 
-
+@Stateful
 public class FichaController {
 	
     private FichaDAO dao = FichaDAO.getInstance();
